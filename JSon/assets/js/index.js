@@ -40,4 +40,21 @@ window.addEventListener("DOMContentLoaded", function(){
         event.preventDefault();
         form.submit();
     });
+    console.log(UserInformation);
+    
+    let userInput = document.querySelectorAll("#user-information input");
+    for (let i = 0; i < userInput.length; i++)
+    {
+        userInput[i].addEventListener("change", function(event){
+        
+        form.validate();
+         let btn = document.getElementById("btn");
+            if (userInput[i].classList.contains("ok"))
+            {
+                btn.getAttribute(false);
+            }
+    });
+    }
+   
+    
 });
