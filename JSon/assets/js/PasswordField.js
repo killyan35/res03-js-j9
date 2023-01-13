@@ -8,18 +8,21 @@ class PasswordField extends Field {
     
     validate()
      {
-        if (this.element.name === "")
+         this.errors= [];
+        if (this.element.value === "")
         {
             this.errors = "Le champ ${this.#name} ne peut pas être vide";
-            this.element.classList.add("class", "nok");
+            this.element.classList.add("nok");
+            this.element.classList.remove("ok");
         }
-        if (this.element.name.length < 5)
+        if (this.element.value.length < 5)
         {
             this.errors = "Le champ ${this.#name} est trop court (5 caractères minimum)";
         }
         else
         {
-            this.element.classList.add("class", "ok");
+            this.element.classList.add("ok");
+            this.element.classList.remove("nok");
         }
     }
 };

@@ -10,7 +10,6 @@ class Form {
     
     constructor(){
         this.#fields = [];
-        this.#submitted = false;
     }
     
     get fields (){
@@ -35,13 +34,34 @@ class Form {
 
     validate() 
     {
+        let btn = document.getElementById("btn");
+        
+        let flag = false;
         
         for (let i = 0; i < this.#fields.length; i++)
         {
             this.#fields[i].validate();
-            console.log(this.#fields[i].validate);
             
+            
+            if (this.#fields[i].errors.length > 0)
+            {
+                flag=true;
+                
+            }
         }
+            if (flag === true)
+            {
+                btn.classList.add("disabled");
+            }
+            else 
+            {
+                btn.classList.remove("disabled");
+                 
+            }
+            console.log(flag);
+            
+        
+        
          
     }
     

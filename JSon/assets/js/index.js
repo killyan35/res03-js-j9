@@ -48,11 +48,7 @@ window.addEventListener("DOMContentLoaded", function(){
         userInput[i].addEventListener("change", function(event){
         
         form.validate();
-         let btn = document.getElementById("btn");
-            if (userInput[i].classList.contains("ok"))
-            {
-                btn.getAttribute(false);
-            }
+         
     });
     }
    
