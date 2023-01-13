@@ -8,7 +8,7 @@ class TextField extends Field {
     
     validate()
     {
-        
+        if ()
     }
 };
 export { TextField };

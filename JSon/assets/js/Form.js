@@ -1,3 +1,8 @@
+import { Field } from './Field.js';
+import { EmailField } from './EmailField.js';
+import { TextField } from './TextField.js';
+import { PasswordField } from './PasswordField.js';
+
 class Form {
     #fields;
     #submitted;
@@ -5,7 +10,7 @@ class Form {
     
     constructor(){
         this.#fields = [];
-        this.#submitted = submitted;
+        this.#submitted = false;
     }
     
     get fields (){
@@ -20,7 +25,7 @@ class Form {
     }
     addField(field)
     {
-        
+        this.#fields.push(field);
     }
     
     submit() 
@@ -38,3 +43,4 @@ class Form {
         
     }
 }
+export { Form };
